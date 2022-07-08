@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sa-webapp
+  namespace: rahul
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sa-webapp
+  template:
+    metadata:
+      labels:
+        app: sa-webapp
+    spec:
+      containers:
+        - name: sa-webapp
+          image: rahulyadav007/sa-webapp:v1
+          ports:
+            - containerPort: 8080

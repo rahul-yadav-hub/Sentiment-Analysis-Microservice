@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sa-frontend
+  namespace: rahul
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sa-frontend
+  template:
+    metadata:
+      labels:
+        app: sa-frontend
+    spec:
+      containers:
+        - name: sa-frontend
+          image: rahulyadav007/sa-frontend:v3
+          ports:
+            - containerPort: 80

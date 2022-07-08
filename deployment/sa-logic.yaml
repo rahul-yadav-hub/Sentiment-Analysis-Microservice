@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sa-logic
+  namespace: rahul
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sa-logic
+  template:
+    metadata:
+      labels:
+        app: sa-logic
+    spec:
+      containers:
+        - name: sa-logic
+          image: rahulyadav007/sa-logic:v1
+          ports:
+            - containerPort: 5000
